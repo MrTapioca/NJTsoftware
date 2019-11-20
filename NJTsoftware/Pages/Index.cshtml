@@ -8,13 +8,13 @@
     @*<partial name="_ValidationScriptsPartial" />*@
 }
 
-<div class="row mt-4" id="welcome">
+<div class="row mt-4">
 
     <div class="col-lg-6 order-lg-last mb-3 mb-lg-0">
         <img src="~/images/pic.jpg" class="img-fluid shadow" />
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6" id="welcome">
         <h1 class="text-primary text-shadow">Welcome</h1>
         <p class="lead mb-4 text-justify hyphenate">
             I am Natán Tapia, a software developer with a passion for coding.
@@ -46,17 +46,17 @@
                 @* d-flex flex-wrap *@
                 <div class="m-n2">
                     @* flex-fill flex-sm-grow-0 *@
-                    <a href="#contact" class="btn btn-primary m-2">Contact Me</a>
+                    <a href="#contact" class="btn btn-lg btn-primary m-2">Contact Me</a>
 
                     @*<a href="\Resume - Natan Tapia.pdf" class="btn btn-info flex-fill flex-sm-grow-0 m-3">Download Resume</a>*@
                     @* flex-fill flex-sm-grow-0 *@
                     <div class="btn-group m-2">
-                        <button type="button" class="btn btn-info"
+                        <button type="button" class="btn btn-lg btn-info"
                                 onclick="openLightbox('Resume - Natan Tapia.png')">
                             View Resume
                         </button>
-                        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
-                        <div class="dropdown-menu">
+                        <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+                        <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="\Resume - Natan Tapia.pdf">Download Resume</a>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
     <div class="col-sm-6 col-lg-4 my-4">
         <div class="px-4">
             <div class="d-flex flex-column align-items-center">
-                <span class="fas fa-globe fa-3x text-info"></span>
+                <span class="fas fa-globe fa-4x text-info"></span>
                 <h2 class="mt-4 mb-3">Web</h2>
             </div>
             <p class="text-justify hyphenate">
@@ -111,7 +111,7 @@
     <div class="col-sm-6 col-lg-4 my-4">
         <div class="px-4">
             <div class="d-flex flex-column align-items-center">
-                <span class="fas fa-desktop fa-3x text-info"></span>
+                <span class="fas fa-desktop fa-4x text-info"></span>
                 <h2 class="mt-4 mb-3">Desktop</h2>
             </div>
             <p class="text-justify hyphenate">
@@ -128,7 +128,7 @@
     <div class="col-sm-6 col-lg-4 my-4">
         <div class="px-4">
             <div class="d-flex flex-column align-items-center">
-                <span class="fas fa-mobile-alt fa-3x text-info"></span>
+                <span class="fas fa-mobile-alt fa-4x text-info"></span>
                 <h2 class="mt-4 mb-3">Mobile</h2>
             </div>
             <p class="text-justify hyphenate">
@@ -248,13 +248,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input asp-for="Message.Name" class="form-control" placeholder="Name" required />
+                        <input asp-for="Message.Name" class="form-control form-control-lg" placeholder="Name" required />
                         <span asp-validation-for="Message.Name" class="text-danger small"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input asp-for="Message.Email" class="form-control" placeholder="E-mail" required />
+                        <input asp-for="Message.Email" class="form-control form-control-lg" placeholder="E-mail" required />
                         <span asp-validation-for="Message.Email" class="text-danger small"></span>
                     </div>
                 </div>
@@ -262,7 +262,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <textarea asp-for="Message.MessageText" class="form-control" rows="4" placeholder="Message" required></textarea>
+                        <textarea asp-for="Message.MessageText" class="form-control form-control-lg" rows="5" placeholder="Message" required></textarea>
                         <span asp-validation-for="Message.MessageText" class="text-danger small"></span>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
 
             <div class="row">
                 <div class="col d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary" data-submit="true">
+                    <button type="submit" class="btn btn-lg btn-primary" data-submit="true">
                         <div data-sending="false">Send Message</div>
                         <div data-sending="true">
                             <span class="mr-3">Sending...</span>
