@@ -44,7 +44,7 @@ html {
     }
 
 .text-shadow {
-    text-shadow: .2rem .2rem .5rem #ccc;
+    text-shadow: .2rem .2rem .2rem #ddd;
     /*text-shadow: 0 .5rem 1rem rgba(0,0,0,.15);*/
 }
 
