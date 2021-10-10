@@ -1,0 +1,322 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section Scripts {
+    @*<partial name="_ValidationScriptsPartial" />*@
+}
+
+<div class="row mt-4">
+
+    <div class="col-lg-6 order-lg-last mb-3 mb-lg-0">
+        <img src="~/images/pic.jpg" class="img-fluid shadow" />
+    </div>
+
+    <div class="col-lg-6" id="welcome">
+        <h1 class="text-primary text-shadow">Welcome</h1>
+        <p class="lead mb-4 text-justify hyphenate">
+            Hi there! My name is @Model.PersonalSettings.FullName and
+            I'm a software developer specializing in the .NET stack.
+        </p>
+
+        <div class="row mb-3">
+            <div class="col-3 col-sm-2 font-weight-bold">PHONE</div>
+            <div class="col"><a href="tel:@Model.PersonalSettings.Phone">@Model.PersonalSettings.Phone</a></div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-3 col-sm-2 font-weight-bold">EMAIL</div>
+            <div class="col" data-insert="email"
+                 data-user="@Model.PersonalSettings.EmailUser" data-domain="@Model.PersonalSettings.EmailDomain"></div>
+        </div>
+        <div class="row mb-3 justify-content-start">
+            <div class="col-3 col-sm-2 font-weight-bold">SOCIAL</div>
+            <div class="col">
+                <a href="@Model.PersonalSettings.LinkedInUrl" target="_blank">
+                    <span class="fab fa-linkedin fa-2x clickable-icon"></span>
+                </a>
+                <a href="@Model.PersonalSettings.GitHubUrl" target="_blank" class="ml-2">
+                    <span class="fab fa-github fa-2x clickable-icon"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-2">
+            <div class="col">
+                @* d-flex flex-wrap *@
+                <div class="m-n2">
+                    @* flex-fill flex-sm-grow-0 *@
+                    <a href="#contact" class="btn btn-lg btn-primary m-2">Contact Me</a>
+
+                    @* flex-fill flex-sm-grow-0 *@
+                    <div class="btn-group m-2">
+                        <button type="button" class="btn btn-lg btn-info"
+                                onclick="openLightbox('@Model.PersonalSettings.ResumeImageFile')">
+                            View Resume
+                        </button>
+                        <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="@Model.PersonalSettings.ResumePdfFile">Download Resume</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-4" />
+
+<div class="row" id="solutions">
+    <div class="col">
+        <div class="d-flex justify-content-between">
+            <h1 class="text-primary text-shadow">Solutions</h1>
+            <h1><span class="far fa-lightbulb text-primary text-shadow"></span></h1>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col">
+        <p class="lead text-justify hyphenate">
+            Committed to quality software. Focused on simple and elegant solutions.
+        </p>
+    </div>
+</div>
+
+<div class="row mt-n1 mb-n4">
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center">
+                <span class="fas fa-globe fa-4x text-info"></span>
+                <h2 class="mt-4 mb-3">Web</h2>
+            </div>
+            <p class="text-justify hyphenate">
+                Experienced on the entire stack: HTML, CSS and Javascript at the front
+                with ASP.NET Core at the back.
+            </p>
+            @*<ul class="pl-3">
+                <li>Sell your products on a business site.</li>
+                <li>Share your stories on a personal blog.</li>
+                <li>Manage your content with a private login.</li>
+            </ul>*@
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center">
+                <span class="fas fa-desktop fa-4x text-info"></span>
+                <h2 class="mt-4 mb-3">Desktop</h2>
+            </div>
+            <p class="text-justify hyphenate">
+                Experienced on Windows .NET solutions built with WPF or WinForms.
+            </p>
+            @*<ul class="pl-3">
+                <li>Process data on your server with a service.</li>
+                <li>Easily work on your data with a desktop application.</li>
+                <li>Run user friendly reports.</li>
+            </ul>*@
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center">
+                <span class="fas fa-mobile-alt fa-4x text-info"></span>
+                <h2 class="mt-4 mb-3">Mobile</h2>
+            </div>
+            <p class="text-justify hyphenate">
+                Experienced on Android development using Xamarin.Forms.
+            </p>
+            @*<ul class="pl-3">
+                <li>Android</li>
+                <li>iOS</li>
+                <li>Windows</li>
+            </ul>*@
+        </div>
+    </div>
+
+</div>
+
+<hr class="my-4" />
+
+<div class="row" id="portfolio">
+    <div class="col">
+        <div class="d-flex justify-content-between">
+            <h1 class="text-primary text-shadow">Portfolio</h1>
+            <h1><span class="far fa-folder text-primary text-shadow"></span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <p class="lead text-justify hyphenate">
+            Here are a few examples of my work.
+        </p>
+    </div>
+</div>
+
+<div class="row mt-n1 mb-n4">
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center mb-4">
+                <div class="m-4 portfolio-thumbnail-container">
+                    <img src="~/images/terrman.png" class="img-thumbnail portfolio-thumbnail shadow" />
+                </div>
+            </div>
+            <h4 class="text-center">Territory Manager</h4>
+            <h6 class="mb-2 text-muted text-center">Windows Desktop App</h6>
+            <p class="text-justify hyphenate">
+                Easy management of addresses and related information for the ministry.
+                Data is exported to a formatted Excel document.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center mb-4">
+                <div class="m-4 portfolio-thumbnail-container">
+                    <img src="~/images/pwc.png" class="img-thumbnail portfolio-thumbnail shadow" />
+                </div>
+            </div>
+            <h4 class="text-center">Lamp</h4>
+            <h6 class="mb-2 text-muted text-center">Web App</h6>
+            <p class="text-justify hyphenate">
+                Scheduling app for groups with calendar to view and sign up for shifts.
+                Login and approval system with permission control.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-4 my-4">
+        <div class="px-4">
+            <div class="d-flex flex-column align-items-center mb-4">
+                <div class="m-4 portfolio-thumbnail-container">
+                    <img src="~/images/bricks.png" class="img-thumbnail portfolio-thumbnail shadow" />
+                </div>
+            </div>
+            <h4 class="text-center">Bricks</h4>
+            <h6 class="mb-2 text-muted text-center">Android game</h6>
+            <p class="text-justify hyphenate">
+                Brick breaker clone built with the Unity engine.
+                This screenshot was taken from the game running on an Android phone.
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="lightbox">
+    <div class="lightbox-container">
+        <img src="" class="lightbox-image img-thumbnail bg-light p-2" />
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<form id="contact-form">
+
+    <div class="row" id="contact">
+        <div class="col">
+            <div class="d-flex justify-content-between">
+                <h1 class="text-primary text-shadow">Contact Me</h1>
+                <h1><span class="far fa-comment text-primary text-shadow"></span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p class="lead text-justify hyphenate">
+                Are you interested in working together? Send me a message.
+                I look forward to hearing from you.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-8 col-xl-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input asp-for="Message.Name" class="form-control form-control-lg"
+                               placeholder="Your name" required />
+                        <span asp-validation-for="Message.Name" class="text-danger small"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input asp-for="Message.Email" class="form-control form-control-lg"
+                               placeholder="Your e-mail" required />
+                        <span asp-validation-for="Message.Email" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <textarea asp-for="Message.MessageText" class="form-control form-control-lg" rows="5"
+                                  placeholder="Your message" required></textarea>
+                        <span asp-validation-for="Message.MessageText" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <button type="submit" class="btn btn-lg btn-primary" data-submit="true">
+                        <div data-sending="false">Send Message</div>
+                        <div data-sending="true">
+                            <span class="mr-3">Sending...</span>
+                            <span class="spinner-border spinner-border-sm" role="status">
+                                <span class="sr-only">Sending...</span>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row mt-3" id="contact-form-sent">
+                <div class="col">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <span>
+                            Message sent! I will get back to you as soon as possible.
+                            Thank you for reaching out.
+                        </span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3" id="contact-form-error">
+                <div class="col">
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <span>
+                            I'm terribly sorry, but your message could not be sent for some odd reason.
+                            Please try again or send me an email directly. Thank you!
+                        </span>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</form>

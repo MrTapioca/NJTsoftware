@@ -1,0 +1,184 @@
+﻿.text-color-1 {
+    /*color: #2e3192;*/
+}
+
+.text-color-accent {
+    /*color: #00a99d;*/
+}
+
+html {
+    /*scroll-behavior: smooth;*/
+}
+
+#load-spinner {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#body-content {
+    opacity: 0;
+}
+
+    #body-content.fade-in {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
+
+.toast {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.clickable-icon {
+    color: #303030;
+    /*transition: color .3s;*/
+}
+
+    .clickable-icon:hover {
+        color: #2e3192;
+    }
+
+.text-shadow {
+    text-shadow: .2rem .2rem .2rem #ddd;
+    /*text-shadow: 0 .5rem 1rem rgba(0,0,0,.15);*/
+}
+
+.portfolio-thumbnail-container {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.portfolio-thumbnail {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+    .portfolio-thumbnail:hover {
+        transform: scale(1.2);
+    }
+
+.lightbox {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    transition: all .5s ease;
+}
+
+.lightbox-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox-container {
+    height: 100%;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-image {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#contact-form button[type=submit] [data-sending=true] {
+    display: none;
+    margin-left: 5px;
+}
+
+#contact-form-sent, #contact-form-error {
+    display: none;
+}
+
+/* DEFAULT */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    /*color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;*/
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
